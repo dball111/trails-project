@@ -20,6 +20,16 @@ block content
     p#result #{places.lon}
     p
     hr
+    
+  div
+  for posts in social
+    p
+    label(for="image") Image:
+    p
+    img(src= '#{posts.image_url}' )
+    p
+    label(for="description") Description
+    p#result #{posts.description}
   
   form(action="/login" method="post")
     label(for="user_name") User Name: 

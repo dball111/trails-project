@@ -12,7 +12,9 @@ a {
 }*/
 
 label {
-  color: blue;
+  font-family: impact;
+  font-size: 30px;
+  color: firebrick;
 }
 
 
