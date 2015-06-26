@@ -17,7 +17,20 @@ label {
   color: firebrick;
 }
 
+#pictures {
+  height: 400px;
+  width: 600px;
+  border: 1px solid black;
+}
 
+/*#left {
+  float: left;
+}
+
+#right {
+  float: right;
+  display: inline;
+}*/
 
 
 

@@ -1,42 +1,55 @@
 extends layout
 
 block content
-  h1= "Trail Searcher"
+  h1 #{title}
   //- div
   //-  if currentUser
   //-   p Wazzzzzapppppppp, #{currentUser}!
-  div  
-  for places in result
-    p
-    label(for="location") Location:
-    p#result #{places.city}, #{places.state}
-    label(for="name") Name:
-    p#result #{places.name}
-    label(for="directions") Directions:
-    p#result #{places.directions}
-    label(for="lat") Latitude:
-    p#result #{places.lat} 
-    label(for="long") Longitude:
-    p#result #{places.lon}
-    p
-    hr
+  
+  div
+    form(action="/login" method="post")
+      label(for="user_name") User Name: 
+      input(type="text" name="user_name")
+      p
+      input#button(type="submit")
+      p
+      p
+      
+    form(action="/logout" method="post")
+      input#button(type="submit" value="Logout")
+      p 
+      p 
+  //- div
+  //-   form(action="/search" method="post")
+  //-     input(type="text", placeholder="Enter a State")
+  //-     p 
+  //-     input#button(type="submit" value="Search Places")
+
+  
+
+  div 
+    for places in result
+      p
+      label(for="location") Location:
+      p#result #{places.city}, #{places.state}
+      label(for="name") Name:
+      p#result #{places.name}
+      label(for="directions") Directions:
+      p#result #{places.directions}
+      label(for="lat") Latitude:
+      p#result #{places.lat} 
+      label(for="long") Longitude:
+      p#result #{places.lon}
+      p
+      hr
     
   div
-  for posts in social
-    p
-    label(for="image") Image:
-    p
-    img(src= '#{posts.image_url}' )
-    p
-    label(for="description") Description
-    p#result #{posts.description}
+    for posts in social
+      p
+      label(for="image") Image:
+      p
+      img#pictures(src= '#{posts.image_url}' )
+      p
+      label(for="description") Description
+      p#result #{posts.description}
   
-  form(action="/login" method="post")
-    label(for="user_name") User Name: 
-    input(type="text" name="user_name")
-    p
-    input#button(type="submit")
-  
-    p
-  form(action="/logout" method="post")
-    input#button(type="submit" value="Logout")
