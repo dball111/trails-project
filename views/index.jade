@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h1= "Trail Searcher"
+  //- div
+  //-  if currentUser
+  //-   p Wazzzzzapppppppp, #{currentUser}!
+  div  
+  for places in result
+    p
+    label(for="location") Location:
+    p#result #{places.city}, #{places.state}
+    label(for="name") Name:
+    p#result #{places.name}
+    label(for="directions") Directions:
+    p#result #{places.directions}
+    label(for="lat") Latitude:
+    p#result #{places.lat} 
+    label(for="long") Longitude:
+    p#result #{places.lon}
+    p
+    hr
+  
+  form(action="/login" method="post")
+    label(for="user_name") User Name: 
+    input(type="text" name="user_name")
+    p
+    input#button(type="submit")
+  
+    p
+  form(action="/logout" method="post")
+    input#button(type="submit" value="Logout")
