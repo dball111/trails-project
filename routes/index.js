@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var unirest = require('unirest');
+var db = require('monk')(process.env.MONGOLAB_URI || 'localhost/trails-db');
 
-var db = require('monk')('localhost/trails-db');
 var trailsCollection = db.get('trails');
 var bcrypt = require('bcryptjs');
 
@@ -60,8 +60,10 @@ router.post('/results', function(req, res, next) {
 router.get('/results', function(req, res, next) {
 
 
-    unirest
+
+  unirest
     .get("https://trailapi-trailapi.p.mashape.com/?q[city_cont]=Denver&radius=10")
+
     .header("X-Mashape-Key", "kJOUgKpJFamshTFuvY7O2GnTccWup1ilLFPjsnmEQTvRxk1qPG")
     .header("Accept", "text/plain")
     .end(function (result) {
@@ -78,7 +80,10 @@ router.get('/results', function(req, res, next) {
       // console.log(result2.status, result2.headers, result2.body);
       // console.log(result2.body);
 
-  res.render('trails/results', {title: "Search Results:", result: result.body.places, social: result2.body.rows })
+  res.render('trails/results', {
+    title: "Search Results:",
+    result: result.body.places,
+    social: result2.body.rows })
 })
 })
 });
