@@ -13,14 +13,14 @@ a {
 
 label {
   font-family: impact;
-  font-size: 30px;
+  font-size: 23px;
   color: firebrick;
 }
 
 #pictures {
-  height: 400px;
-  width: 600px;
-  border: 1px solid black;
+  height: 300px;
+  width: 410px;
+  border: 10px dashed red;
 }
 
 /*#left {

@@ -29,27 +29,33 @@ block content
 
   div 
     for places in result
-      p
-      label(for="location") Location:
-      p#result #{places.city}, #{places.state}
-      label(for="name") Name:
-      p#result #{places.name}
-      label(for="directions") Directions:
-      p#result #{places.directions}
-      label(for="lat") Latitude:
-      p#result #{places.lat} 
-      label(for="long") Longitude:
-      p#result #{places.lon}
-      p
-      hr
+      for posts in social
+
+        p
+        label(for="location") Location:
+        p#result #{places.city}, #{places.state}
+        label(for="name") Name:
+        p#result #{places.name}
+        label(for="directions") Directions:
+        p#result #{places.directions}
+        label(for="lat") Latitude:
+        p#result #{places.lat} 
+        label(for="long") Longitude:
+        p#result #{places.lon}
+        p
+        img#pictures(src= '#{posts.image_url}' )
+        img#pictures(src= '#{posts.image_url}' )
+        img#pictures(src= '#{posts.image_url}' )
+        p
+        p#result #{posts.description}
+        hr
     
-  div
-    for posts in social
-      p
-      label(for="image") Image:
-      p
-      img#pictures(src= '#{posts.image_url}' )
-      p
-      label(for="description") Description
-      p#result #{posts.description}
+  //- div
+  //-   for posts in social
+  //-     p
+  //-     label(for="image") Image:
+  //-     p
+  //-     img#pictures(src= '#{posts.image_url}' )
+  //-     p
+  //-     label(for="description") Description
   
