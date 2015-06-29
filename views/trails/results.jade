@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  h1 #{title}
+
+  div 
+    for places in result
+
+        p
+        label(for="location") Location:
+        p#result #{places.city}, #{places.state}
+        label(for="name") Name:
+        p#result #{places.name}
+        label(for="directions") Directions:
+        p#result #{places.directions}
+        label(for="lat") Latitude:
+        p#result #{places.lat} 
+        label(for="long") Longitude:
+        p#result #{places.lon}
+        p
+        hr
+        
+      for posts in social
+        p
+        img#pictures(src= '#{posts.image_url}' )
+      
+        p
+        p#result #{posts.description}
+        hr

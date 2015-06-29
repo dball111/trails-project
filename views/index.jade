@@ -2,60 +2,49 @@ extends layout
 
 block content
   h1 #{title}
-  //- div
-  //-  if currentUser
-  //-   p Wazzzzzapppppppp, #{currentUser}!
-  
-  div
-    form(action="/login" method="post")
-      label(for="user_name") User Name: 
-      input(type="text" name="user_name")
-      p
-      input#button(type="submit")
-      p
-      p
+      hr
+
+      h2#one= "New Users, Sign Up:"
+        p
+      div 
+        p#good #{sign}
       
-    form(action="/logout" method="post")
-      input#button(type="submit" value="Logout")
-      p 
-      p 
-  //- div
-  //-   form(action="/search" method="post")
-  //-     input(type="text", placeholder="Enter a State")
-  //-     p 
-  //-     input#button(type="submit" value="Search Places")
 
-  
-
-  div 
-    for places in result
-      for posts in social
-
+      
+      form#one(action="/sign-up" method="post")
+        label(for="email") Email: 
+        input(type="text" name="email")
         p
-        label(for="location") Location:
-        p#result #{places.city}, #{places.state}
-        label(for="name") Name:
-        p#result #{places.name}
-        label(for="directions") Directions:
-        p#result #{places.directions}
-        label(for="lat") Latitude:
-        p#result #{places.lat} 
-        label(for="long") Longitude:
-        p#result #{places.lon}
+        label(for="password") Password: 
+        input(type="password" name="password")
         p
-        img#pictures(src= '#{posts.image_url}' )
-        img#pictures(src= '#{posts.image_url}' )
-        img#pictures(src= '#{posts.image_url}' )
+        label(for="password_confirm") Password Confirmation: 
+        input(type="password" name="password_confirm")
         p
-        p#result #{posts.description}
+        input#button(type="submit")
+        p 
+        p
+        p
         hr
-    
-  //- div
-  //-   for posts in social
-  //-     p
-  //-     label(for="image") Image:
-  //-     p
-  //-     img#pictures(src= '#{posts.image_url}' )
-  //-     p
-  //-     label(for="description") Description
-  
+        
+      h2#two= "Returning Users, Log In:"
+        p
+      div
+        p#error  #{message}
+      form#two(action="/login" method="post")
+        label(for="log_email") Email: 
+        input(type="text" name="log_email")
+        p
+        label(for="log_password") Password: 
+        input(type="password" name="log_password")
+        p
+        input#button(type="submit")
+        p
+        p
+        hr
+        
+        
+      form(action="/logout" method="post")
+        input#button(type="submit" value="Logout")
+        p 
+        p 
