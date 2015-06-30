@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-// require('dotenv').load()
+require('dotenv').load()
 
 var unirest = require('unirest');
 
