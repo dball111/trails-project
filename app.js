@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 // require('dotenv').load()
 
+var unirest = require('unirest');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
