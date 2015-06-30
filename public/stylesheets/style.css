@@ -1,27 +1,123 @@
+/*other background possibilities: http://i.imgur.com/bMRQ0xp.jpg
+http://www.hdwallpapersinn.com/wp-content/uploads/2014/09/33823_abstract_geometric_abstract_shapes.jpg,
+http://flatwallpaper.com/wp-content/uploads/2015/04/Geometric-Multicolor-Triangles-Wallpaper.jpg*/
+
+
+html {
+  background: url('https://s-media-cache-ak0.pinimg.com/736x/c6/20/ca/c620caef7766c43a20b3ab81b2ebcbc0.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+div#transbox
+{
+  position: fixed
+  margin: 100px;
+  margin-left: 260px;
+  margin-right: 260px;
+  background-color: #ffffff;
+  /*border: 1px solid black;*/
+  opacity:0.69;
+  filter:alpha(opacity=60);
+}
+
+div#transbox p {
+  margin: 1%;
+  color: #000000;
+}
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: impact;
 }
 
 a {
   color: #00B7FF;
 }
 
-/*#result:nth-child(even) {
-  background-color: firebrick;
-}*/
+h1, h2 {
+  color: white;
+  text-shadow:
+   -1px -1px 0 #000,
+   1px -1px 0 #000,
+   -1px 1px 0 #000,
+   1px 1px 0 #000;
+}
 
-label {
+p {
+  padding: 5px;
+}
+
+
+
+
+#pictures {
+  display: inline-block;
+  width: 30%;
+
+}
+
+.search {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search1 {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#good {
+  color: green;
+}
+
+#error {
+  color: red;
+}
+
+/*for all the labels besides the login page*/
+
+
+label{
+  margin: 1%;
   font-family: impact;
   font-size: 23px;
   color: firebrick;
 }
 
-#pictures {
-  height: 300px;
-  width: 410px;
-  border: 10px dashed red;
+
+/*for the login page to keep spacing correct in form*/
+
+label2{
+  font-family: impact;
+  font-size: 23px;
+  color: firebrick;
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 110px;
+  text-align: left;
 }
+
+
+
+
+
+
+/*#block {
+  display: inline-block;
+}
+
+#describe {
+  display: inline-block;
+}*/
+
+
 
 /*#left {
   float: left;

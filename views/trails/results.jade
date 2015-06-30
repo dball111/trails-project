@@ -3,7 +3,7 @@ extends ../layout
 block content
   h1 #{title}
 
-  div 
+  div#transbox
     for places in result
 
         p
@@ -17,11 +17,11 @@ block content
         p#result #{places.lat}, #{places.lon}
         p
         hr
-        
+  h2 Instagrams in this area:
       for posts in social
         p
         img#pictures(src= '#{posts.image_url}' )
-      
         p
-        p#result #{posts.description}
-        hr
+        p#describe #{posts.description}
+        
+        

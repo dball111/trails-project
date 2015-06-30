@@ -1,50 +1,55 @@
 extends layout
 
 block content
-  h1 #{title}
-      hr
+  div#transbox
+      img#pictures(src="../public/images/logo.png")
 
-      h2#one= "New Users, Sign Up:"
-        p
-      div 
-        p#good #{sign}
-      
+      div.search
+        h4 Login or Sign up to search and save trails and see what other trailblazrs are up to in the great outdoors.
+          
 
-      
-      form#one(action="/sign-up" method="post")
-        label(for="email") Email: 
-        input(type="text" name="email")
-        p
-        label(for="password") Password: 
-        input(type="password" name="password")
-        p
-        label(for="password_confirm") Password Confirmation: 
-        input(type="password" name="password_confirm")
-        p
-        input#button(type="submit")
-        p 
-        p
-        p
-        hr
-        
-      h2#two= "Returning Users, Log In:"
-        p
-      div
-        p#error  #{message}
-      form#two(action="/login" method="post")
-        label(for="log_email") Email: 
-        input(type="text" name="log_email")
-        p
-        label(for="log_password") Password: 
-        input(type="password" name="log_password")
-        p
-        input#button(type="submit")
-        p
-        p
-        hr
-        
-        
-      form(action="/logout" method="post")
-        input#button(type="submit" value="Logout")
-        p 
-        p 
+          h2#one= "New Users, Sign Up:"
+            p
+          div
+              p#error #{error}
+            
+
+            form#one(action="/sign-up" method="post")
+              label2(for="email") Email: 
+              input(type="text" name="email")
+              p
+              label2(for="password") Password: 
+              input(type="password" name="password")
+              p
+              label2(for="password_confirm") Confirm: 
+              input(type="password" name="password_confirm")
+              p
+              input#button(type="submit")
+              p 
+              p
+              p
+              
+            
+          h2#two= "Returning Users, Log In:"
+            p
+          div
+              p#error  #{message}
+            form#two(action="/login" method="post")
+              label2(for="log_email") Email: 
+              input(type="text" name="log_email")
+              p
+              label2(for="log_password") Password: 
+              input(type="password" name="log_password")
+              p
+              input#button(type="submit")
+              p
+              p
+
+
+              
+              
+              
+            //- form(action="/logout" method="post")
+            //-   input#button(type="submit" value="Logout")
+            //-   p 
+            //-   p 

@@ -1,15 +1,22 @@
 extends ../layout
 
 block content
-  h1 #{title}
+  div#transbox
+    div.search
+      h1    #{title}
+      h2#good #{message}
 
-  
+      
 
-  div
-    form(action="/results" method="post")
-      input(type="text", placeholder="Enter a State", name="search")
-      p 
-      input#button(type="submit" value="Search Places")
+      div.search1
+        form(action="/results" method="post")
+          input(type="text", placeholder="Enter a State", name="location-input")
+          p 
+          p
+          input#button(type="submit" value="Search Trails")
+          p
+          p
+          label  
 
 
   

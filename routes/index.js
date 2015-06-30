@@ -9,7 +9,7 @@ var bcrypt = require('bcryptjs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: "Let's get Trailblazin'"});
+  res.render('index');
 });
 
 router.post('/sign-up', function(req, res, next) {
@@ -17,7 +17,9 @@ router.post('/sign-up', function(req, res, next) {
   var hash = bcrypt.hashSync(req.body.password, 8);
 
   trailsCollection.insert({email: req.body.email, password: hash});
-  res.redirect('/')
+  res.redirect('/trails')
+} else {
+  res.render('index', {error: "Password and confirmation must match, son."})
 }
 });
 
@@ -46,7 +48,7 @@ router.post('/login', function(req, res, next) {
 
 //after login, this gets the trails/index.jade, which will show just the search bar
 router.get('/trails', function(req, res, next) {
-  res.render('trails/index', {title: "Search Da Trails:"})
+  res.render('trails/index', {title: "Scour the Trails:", message: "You've been logged in!"})
 
 });
 
@@ -59,7 +61,7 @@ router.post('/results', function(req, res, next) {
 //after searching, this will activate the api by req.body.search
 router.get('/results', function(req, res, next) {
 
-
+  // if (req.body.search == "denver")
 
   unirest
     .get("https://trailapi-trailapi.p.mashape.com/?q[city_cont]=Denver&radius=10")
