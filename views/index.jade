@@ -2,7 +2,7 @@ extends layout
 
 block content
   div#transbox
-      img#pictures(src="../public/images/logo.png")
+      img#logo(src="http://i.imgur.com/iHV3MQo.png")
 
       div.search
         h4 Login or Sign up to search and save trails and see what other trailblazrs are up to in the great outdoors.
@@ -24,7 +24,7 @@ block content
               label2(for="password_confirm") Confirm: 
               input(type="password" name="password_confirm")
               p
-              input#button(type="submit")
+              input#button(type="submit" value="sign-up")
               p 
               p
               p
@@ -41,7 +41,7 @@ block content
               label2(for="log_password") Password: 
               input(type="password" name="log_password")
               p
-              input#button(type="submit")
+              input#button(type="submit" value="log-in")
               p
               p
 
