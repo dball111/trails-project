@@ -59,43 +59,43 @@ router.get('/trails', function(req, res, next) {
 //working correctly without the redirect
 
 
-// router.post('/results', function(req, res, next) {
-//   res.redirect('/results')
-//
-// });
+router.post('/', function(req, res, next) {
+  res.render('trails/index')
+
+});
 
 
 //after searching, this will activate the api by req.body.search
-// router.get('/results', function(req, res, next) {
-//
-//   // if (req.body.search == "denver")
-//
-//   unirest
-//     .get("https://trailapi-trailapi.p.mashape.com/?q[city_cont]=Denver&radius=10")
-//
-//     .header("X-Mashape-Key", "kJOUgKpJFamshTFuvY7O2GnTccWup1ilLFPjsnmEQTvRxk1qPG")
-//     .header("Accept", "text/plain")
-//     .end(function (result) {
-//       // console.log(
-//       //   result.status,
-//       //   result.headers,
-//       //   result.body);
-//
-//     unirest
-//     .get("https://twinesocial.p.mashape.com/v1/content?campaign=derektrails")
-//     .header("X-Mashape-Key", "fn4a5vCfS4mshcgPHf87Ksd6rjhKp1MBa0YjsnDWurXz4ZsZsW")
-//     .header("Accept", "application/json")
-//     .end(function (result2) {
-//       // console.log(result2.status, result2.headers, result2.body);
-//       // console.log(result2.body);
-//
-//   res.render('trails/results', {
-//     title: "Search Results:",
-//     result: result.body.places,
-//     social: result2.body.rows })
-// })
-// })
-// });
+router.get('/', function(req, res, next) {
+
+  // if (req.body.search == "denver")
+
+  unirest
+    .get("https://trailapi-trailapi.p.mashape.com/?q[city_cont]=Denver&radius=10")
+
+    .header("X-Mashape-Key", "kJOUgKpJFamshTFuvY7O2GnTccWup1ilLFPjsnmEQTvRxk1qPG")
+    .header("Accept", "text/plain")
+    .end(function (result) {
+      // console.log(
+      //   result.status,
+      //   result.headers,
+      //   result.body);
+
+    unirest
+    .get("https://twinesocial.p.mashape.com/v1/content?campaign=derektrails")
+    .header("X-Mashape-Key", "fn4a5vCfS4mshcgPHf87Ksd6rjhKp1MBa0YjsnDWurXz4ZsZsW")
+    .header("Accept", "application/json")
+    .end(function (result2) {
+      // console.log(result2.status, result2.headers, result2.body);
+      // console.log(result2.body);
+
+  res.render('trails/index', {
+    title: "Search Results:",
+    result: result.body.places,
+    social: result2.body.rows })
+})
+})
+});
 
 
 
