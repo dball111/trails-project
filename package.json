@@ -17,6 +17,7 @@
     "serve-favicon": "~2.2.1",
     "unirest": "~0.4.2",
     "bcryptjs": "~2.1.0",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "jsdom": "~5.5.0"
   }
 }

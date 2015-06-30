@@ -1,3 +1,5 @@
+//Displays search results on /trails page
+
 $(function(){
     $('#script').on('click', function(event){
         get_trails();
@@ -23,6 +25,8 @@ $(function(){
 		}
 });
 
+
+//Displays pictures associated with search results (from trails api)
 
 $(function(){
 	$('#script').on('click', function(event){

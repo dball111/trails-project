@@ -6,6 +6,9 @@ var db = require('monk')(process.env.MONGOLAB_URI || 'localhost/trails-db');
 var trailsCollection = db.get('trails');
 var bcrypt = require('bcryptjs');
 
+//
+
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -55,24 +58,16 @@ router.get('/trails', function(req, res, next) {
 
 
 
-//These work to take to results page, but am commenting out to see if I can get a replica of the trails api search
-//working correctly without the redirect
 
-
-router.post('/', function(req, res, next) {
-  res.render('trails/index')
-
-});
 
 
 //after searching, this will activate the api by req.body.search
-router.get('/', function(req, res, next) {
+router.get('/results', function(req, res, next) {
 
-  // if (req.body.search == "denver")
+  var location_value = "Colorado";
 
   unirest
-    .get("https://trailapi-trailapi.p.mashape.com/?q[city_cont]=Denver&radius=10")
-
+    .get("https://trailapi-trailapi.p.mashape.com/?q[state_cont]="+ location_value + "&radius=250")
     .header("X-Mashape-Key", "kJOUgKpJFamshTFuvY7O2GnTccWup1ilLFPjsnmEQTvRxk1qPG")
     .header("Accept", "text/plain")
     .end(function (result) {
@@ -89,15 +84,25 @@ router.get('/', function(req, res, next) {
       // console.log(result2.status, result2.headers, result2.body);
       // console.log(result2.body);
 
-  res.render('trails/index', {
+  res.render('trails/results', {
     title: "Search Results:",
     result: result.body.places,
-    social: result2.body.rows })
+    social: result2.body.rows
+    })
 })
 })
 });
 
 
+
+//These work to take to results page, but am commenting out to see if I can get a replica of the trails api search
+//working correctly without the redirect
+
+
+router.post('/results', function(req, res, next) {
+  res.redirect('/results')
+
+});
 
 
 

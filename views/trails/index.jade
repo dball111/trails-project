@@ -5,28 +5,36 @@ block content
   script(src='/javascripts/script.js')
 
   div#transbox
-    div.search
-      h1    #{title}
-      h2#good #{message}
+      img#logo(src="http://i.imgur.com/iHV3MQo.png")
 
-      
-      div.search1
-        //- form(action="/results" method="post")
-        input#location-input(type="text", placeholder="Enter a State", name="location-input")
-        p 
-        p
-        input#script(type="submit" value="Search Trails")
-        p
-        p
-        label  
-      
-  div#transbox    
-      div#search_title
-      div#trail_api_result
-      
-  div#transbox
-      div#search_title_photo
-      div#trail_api_result_photo
+      div.search
+        h1    #{title}
+        h2#good #{message}
+
+        
+        div.search1
+            input#location-input(type="text", placeholder="Enter a State", name="shit") 
+            p 
+            p
+            input#script(type="submit" value="Search Trails")
+            p
+            p
+            label  
+          form(action="/results" method="post")
+            input#script(type="submit" value="see directions + more photos")
+        
+    div#transbox    
+        div#search_title
+        div#trail_api_result
+        
+    div#transbox
+        div#search_title_photo
+        div#trail_api_result_photo
+        
+
+
+        
+    
       
       
       
