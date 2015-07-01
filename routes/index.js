@@ -64,12 +64,12 @@ router.get('/trails', function(req, res, next) {
 //after searching, this will activate the api by req.body.search
 router.get('/results', function(req, res, next) {
 
-  var location_value = "Colorado";
+  var location_value = "utah";
 
   unirest
-    .get("https://trailapi-trailapi.p.mashape.com/?q[state_cont]="+ location_value + "&radius=250")
+    .get("https://trailapi-trailapi.p.mashape.com/?q[state_cont]="+ location_value + "&radius=25")
     .header("X-Mashape-Key", "kJOUgKpJFamshTFuvY7O2GnTccWup1ilLFPjsnmEQTvRxk1qPG")
-    .header("Accept", "text/plain")
+    .header("Accept", "application/json")
     .end(function (result) {
       // console.log(
       //   result.status,
