@@ -1,27 +1,55 @@
 extends ../layout
 
 block content
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+
+
   h1 #{title}
 
-  div#transbox
-      for places in result
-            p
-            label(for="location") Location:
-            p#result #{places.city}, #{places.state}
-            label(for="name") Name:
-            p#result #{places.name}
-            label(for="directions") Directions:
-            p#result #{places.directions}
-            label(for="lat") Latitude/Longitude:
-            p#result #{places.lat}, #{places.lon}
-            p
-            hr
-      h2 Instagrams in this area:
-          for posts in social
-            h4
-              p
-              img#pictures(src= '#{posts.image_url}' )
-              p
-              p#describe #{posts.description}
-          
+    div#transbox
+      section.demo
+          button.next Next
+            |   
+            button.prev Previous
+            |   
+            .container
+              for posts in social
+                  div(style='display: inline-block;')
+                    img#pictures(src= '#{posts.image_url}' )
+                    h5#describe #{posts.description}
+
+                     
+                     
+            
+                script(src='/javascripts/script.js')
+  
+
+            
+
+
+
+
+
+
+
+        //- for places in result
+        //-       p
+        //-       label(for="location") Location:
+        //-       p#result #{places.city}, #{places.state}
+        //-       label(for="name") Name:
+        //-       p#result #{places.name}
+        //-       label(for="directions") Directions:
+        //-       p#result #{places.directions}
+        //-       label(for="lat") Latitude/Longitude:
+        //-       p#result #{places.lat}, #{places.lon}
+        //-       p
+        //-       hr
+        //- h2 Instagrams in this area:
+        //-     for posts in social
+        //-       h4
+        //-         p
+        //-         img#pictures(src= '#{posts.image_url}' )
+        //-         p
+        //-         p#describe #{posts.description}
+            
         
