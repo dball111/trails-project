@@ -7,24 +7,26 @@ block content
   h1 #{title}
 
     div#transbox
-      section.demo
-          button.next Next
-            |   
-            button.prev Previous
-            |   
-            .container
-              for posts in social
-                  div(style='display: inline-block;')
-                    img#pictures(src= '#{posts.image_url}' )
-                    h5#describe #{posts.description}
-        
-            
+        for places in result
+              p
+              label(for="location") Location:
+              p#result #{places.city}, #{places.state}
+              label(for="name") Name:
+              p#result #{places.name}
+              label(for="directions") Directions:
+              p#result #{places.directions}
+              label(for="lat") Latitude/Longitude:
+              p#result #{places.lat}, #{places.lon}
+              p
+              hr
 
-                     
-                     
-            
-                script(src='/javascripts/script.js')
-  
+    
+
+             
+             
+    
+        script(src='/javascripts/script.js')
+
 
             
 
