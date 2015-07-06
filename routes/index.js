@@ -62,23 +62,18 @@ router.get('/results', function(req, res, next) {
   var location_value = "colorado";
 
 
-  unirest
+    unirest
     .get("https://trailapi-trailapi.p.mashape.com/?q[state_cont]="+ location_value + "&radius=25")
     .header("X-Mashape-Key", "kJOUgKpJFamshTFuvY7O2GnTccWup1ilLFPjsnmEQTvRxk1qPG")
     .header("Accept", "application/json")
     .end(function (result) {
-      // console.log(
-      //   result.status,
-      //   result.headers,
-      //   result.body);
 
     unirest
     .get("https://twinesocial.p.mashape.com/v1/content?campaign=derektrails")
     .header("X-Mashape-Key", "fn4a5vCfS4mshcgPHf87Ksd6rjhKp1MBa0YjsnDWurXz4ZsZsW")
     .header("Accept", "application/json")
     .end(function (result2) {
-      // console.log(result2.status, result2.headers, result2.body);
-      // console.log(result2.body);
+
 
   res.render('trails/results', {
     title: "Search Results:",
@@ -101,23 +96,10 @@ router.get('/results2', function(req, res, next) {
     .header("X-Mashape-Key", "kJOUgKpJFamshTFuvY7O2GnTccWup1ilLFPjsnmEQTvRxk1qPG")
     .header("Accept", "application/json")
     .end(function (result) {
-      // console.log(
-      //   result.status,
-      //   result.headers,
-      //   result.body);
-
-    // unirest
-    // .get("https://twinesocial.p.mashape.com/v1/content?campaign=derektrails")
-    // .header("X-Mashape-Key", "fn4a5vCfS4mshcgPHf87Ksd6rjhKp1MBa0YjsnDWurXz4ZsZsW")
-    // .header("Accept", "application/json")
-    // .end(function (result2) {
-      // console.log(result2.status, result2.headers, result2.body);
-      // console.log(result2.body);
-
+  
   res.render('trails/results2', {
     title: "Search Results:",
     result: result.body.places,
-    // social: result2.body.rows
     })
 // })
 })
