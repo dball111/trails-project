@@ -22,7 +22,7 @@ router.post('/sign-up', function(req, res, next) {
   trailsCollection.insert({email: req.body.email, password: hash});
   res.redirect('/trails')
 } else {
-  res.render('index', {error: "Password and confirmation must match, son."})
+  res.render('index', {error: "Password and confirmation must match, yo."})
 }
 });
 
@@ -57,14 +57,10 @@ router.get('/trails', function(req, res, next) {
 
 
 
-
-
-
-
 //after searching, this will activate the api by req.body.search
 router.get('/results', function(req, res, next) {
+  var location_value = "colorado";
 
-  var location_value = "utah";
 
   unirest
     .get("https://trailapi-trailapi.p.mashape.com/?q[state_cont]="+ location_value + "&radius=25")
@@ -98,7 +94,7 @@ router.get('/results', function(req, res, next) {
 
 router.get('/results2', function(req, res, next) {
 
-  var location_value = "utah";
+  var location_value = "colorado";
 
   unirest
     .get("https://trailapi-trailapi.p.mashape.com/?q[state_cont]="+ location_value + "&radius=25")
