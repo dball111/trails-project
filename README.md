@@ -8,6 +8,8 @@ Uses:
   - Express
   - Node
   - Javascript
-  - Password Encryption with bcryptjs
+  - Password Encryption with bcryptjs, including salts and hashes
   - Jquery
   - API data
+  - Form validation
+  
