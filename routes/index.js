@@ -5,8 +5,23 @@ var db = require('monk')(process.env.MONGOLAB_URI || 'localhost/trails-db');
 
 var trailsCollection = db.get('trails');
 var bcrypt = require('bcryptjs');
+var cookieSession = require('cookie-session')
 
-//
+//cookie session stuff
+var app = express();
+
+app.set('trust proxy', 1) // trust first proxy
+
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2']
+}))
+
+app.use(function (req, res, next) {
+  var n = req.session.views || 0
+  req.session.views = n++
+  res.end(n + ' views')
+})
 
 
 
@@ -96,7 +111,7 @@ router.get('/results2', function(req, res, next) {
     .header("X-Mashape-Key", "kJOUgKpJFamshTFuvY7O2GnTccWup1ilLFPjsnmEQTvRxk1qPG")
     .header("Accept", "application/json")
     .end(function (result) {
-  
+
   res.render('trails/results2', {
     title: "Search Results:",
     result: result.body.places,
