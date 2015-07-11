@@ -12,5 +12,6 @@ Uses:
   - Jquery
   - API data
   - Form validation
-  - unirest
+  - Unirest library
   - Mashape API database
+  - Client and Server side 
