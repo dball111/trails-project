@@ -6,7 +6,7 @@ trailblazr is an app that pulls from an API of national trails and a social medi
 
 Makes use of:
   - Express
-  - Node
+  - Nodejs
   - Javascript
   - Password Encryption with bcryptjs, including salts and hashes
   - Jquery
